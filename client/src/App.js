@@ -8,7 +8,8 @@ function App() {
 
   useEffect(() => {
     navigate('/login');
-  }, [navigate]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>
