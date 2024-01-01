@@ -1,0 +1,67 @@
+.footer {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.container-footer {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 8%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-list {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.list-item {
+  margin-right: 10px;
+}
+.footer-h2 {
+  font-weight: bold;
+  font-size: 115%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.footer-h2:hover {
+  color: #6db33f;
+  transition: 0.3s;
+}
+
+.container-sumbition {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.email {
+  border: 2px solid black;
+  width: 50%;
+  height: 35px;
+}
+
+.subscribe {
+  border: 2px solid black;
+  width: 40%;
+  height: 41px;
+  background-color: black;
+  color: white;
+}
+
+.child-input-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.confirm-text {
+  margin: 0;
+}
