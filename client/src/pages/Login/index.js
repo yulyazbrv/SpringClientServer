@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUserCredentials } from '../../redux/slices/userCredentialsSlice';
 import { loginUser } from '../../api/loginApi/login';
 import './style.css';
+import { setAuth } from '../../redux/slices/authSlice';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ const Login = () => {
     try {
       await loginUser(email, password);
       dispatch(setUserCredentials({ email, password }));
+      dispatch(setAuth(true))
       navigate(`/`, { replace: true });
     } catch {
       setError('Error');
@@ -47,6 +49,7 @@ const Login = () => {
           <button className='confirm-button' onClick={loginClick}>
             Sign In
           </button>
+          <Link to='/signup'>You are not registered?</Link>
           <p className='error-massage'>{error}</p>
         </div>
       </div>

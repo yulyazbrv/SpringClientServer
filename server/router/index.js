@@ -5,4 +5,7 @@ const router = new Router();
 
 router.get("/getProjects", projectsController.getProjects);
 router.post('/login', userController.login)
+router.post('/signup', userController.registration)
+router.get("/refresh", userController.refresh);
+
 module.exports = router;

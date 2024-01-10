@@ -1,9 +1,16 @@
-const projectsModel = require("../models/projects");
+const { ProjectModel } = require("../models/model");
+const { verifyAccessToken } = require("./token-service");
 
 class ProjectsService {
-  async getAllProjects() {
-    const projects = projectsModel;
-    return projects;
+  async getAllProjects(token) {
+    try {
+      const decoded = verifyAccessToken(token);
+      const userId = decoded.userId;
+      const projects = await ProjectModel.findAll();
+      return projects;
+    } catch (error) {
+      console.error("Error getting projects", error);
+    }
   }
 }
 
