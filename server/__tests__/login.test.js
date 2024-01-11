@@ -5,10 +5,10 @@ describe("Login API", () => {
   it("should successful authentication", async () => {
     login.mockResolvedValue({ success: true });
 
-    const result = await login({ username: "admin", password: "1234" });
+    const result = await login({ username: "ggg@gmail.com", password: "1q1q" });
 
     expect(result).toEqual({ success: true });
-    expect(login).toHaveBeenCalledWith({ username: "admin", password: "1234" });
+    expect(login).toHaveBeenCalledWith({ username: "ggg@gmail.com", password: "1q1q" });
   });
 
   it("should authentication failure", async () => {

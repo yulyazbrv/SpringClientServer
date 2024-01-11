@@ -7,7 +7,7 @@ import Registration from './pages/Registration';
 
 function App() {
   const PrivateRoute = ({ children }) => {
-    const isAuth = useSelector((state) => state.auth);
+    const isAuth = useSelector((state) => state.auth.auth);
     console.log('a', isAuth);
     return isAuth ? children : <Navigate to={'/login'}></Navigate>;
   };
